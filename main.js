@@ -15,7 +15,7 @@
  * To make the second one happen, the number to change
  * is the first argument to `repeat`, currently set at 10.
  */
-const gridWidth = 10;
+const gridWidth = 20;
 let count = 0;
 while (count <= gridWidth * gridWidth) {
   const canvas = document.querySelector('.canvas');
@@ -48,9 +48,9 @@ while (count <= gridWidth * gridWidth) {
 
 // Add queries for all your squares, palette colors, and brush here.
 // (Note the singular or plural used in that sentence!)
-
-
-
+const palette = document.querySelector(".palette");
+const canvas = document.querySelector(".canvas");
+let brushColor = document.querySelector('#current-brush').classList;
 /****************************
  * EVENT LISTENER FUNCTIONS *
 ****************************/
@@ -60,8 +60,18 @@ while (count <= gridWidth * gridWidth) {
 // empty at first, though a console.log just to know they're being
 // run as event listeners (after the next step is set up) isn't a
 // bad idea for testing purposes.
+palette.addEventListener('click', (e) => {
+  brushColor.remove("color-1", "color-2", "color-3", "color-4", "color-5");
+  brushColor.add(e.target.classList[1]);
+  console.log(document.querySelector('#current-brush'))
+})
 
-
+canvas.addEventListener('click', (e) => {
+  let boxClassList = e.target.classList;
+  boxClassList.remove("color-1", "color-2", "color-3", "color-4", "color-5");
+  boxClassList.add(brushColor[0]);
+  console.log(boxClassList[1])
+})
 
 /**************************
  * WIRING IT ALL TOGETHER *
