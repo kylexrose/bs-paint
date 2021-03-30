@@ -14,3 +14,20 @@ canvas.addEventListener('mouseover', (e) =>{
         changeColor(e.target.classList, brushColor[0])
     }
 })
+
+canvas.addEventListener('mousemove', (e) =>{
+    if(e.target.classList[0] === "square" && mousedown){
+        changeColor(e.target.classList, brushColor[0])
+    }
+})
+canvas.addEventListener('mouseleave', (e) =>{
+    if(e.target.classList[0] === "square" && mousedown){
+        changeColor(e.target.classList, brushColor[0])
+    }
+})
+
+canvas.addEventListener('mouseout', (e) =>{
+    if(e.target.classList[0] === "square" && mousedown){
+        changeColor(e.target.classList, brushColor[0])
+    }
+})

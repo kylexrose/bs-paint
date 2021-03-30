@@ -5,6 +5,7 @@ while (count < gridWidth * gridWidth) {
   const canvas = document.querySelector('.canvas');
   const div = document.createElement('div');
   div.className = 'square color-8';
+  div.draggable = false;
   canvas.appendChild(div);
   count++;
 }
