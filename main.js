@@ -20,7 +20,7 @@ let count = 0;
 while (count <= gridWidth * gridWidth) {
   const canvas = document.querySelector('.canvas');
   const div = document.createElement('div');
-  div.className = 'square color-5';
+  div.className = 'square color-8';
   canvas.appendChild(div);
   count++;
 }
@@ -48,6 +48,7 @@ while (count <= gridWidth * gridWidth) {
 
 // Add queries for all your squares, palette colors, and brush here.
 // (Note the singular or plural used in that sentence!)
+const colors = ["color-1", "color-2", "color-3", "color-4", "color-5", "color-6", "color-7", "color-7", "color-8"];
 const palette = document.querySelector(".palette");
 const canvas = document.querySelector(".canvas");
 let brushColor = document.querySelector('#current-brush').classList;
@@ -61,16 +62,20 @@ let brushColor = document.querySelector('#current-brush').classList;
 // run as event listeners (after the next step is set up) isn't a
 // bad idea for testing purposes.
 palette.addEventListener('click', (e) => {
-  brushColor.remove("color-1", "color-2", "color-3", "color-4", "color-5");
+  for(let color of colors){
+    brushColor.remove(color);
+  }
   brushColor.add(e.target.classList[1]);
-  console.log(document.querySelector('#current-brush'))
 })
 
 canvas.addEventListener('click', (e) => {
   let boxClassList = e.target.classList;
-  boxClassList.remove("color-1", "color-2", "color-3", "color-4", "color-5");
+  for(let color of colors){
+    boxClassList.remove(color);
+  }
+  
   boxClassList.add(brushColor[0]);
-  console.log(boxClassList[1])
+  console.log(boxClassList)
 })
 
 /**************************
