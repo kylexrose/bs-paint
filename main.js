@@ -1,5 +1,5 @@
 
-const gridWidth = 20;
+const gridWidth = 100;
 let count = 0;
 while (count < gridWidth * gridWidth) {
   const canvas = document.querySelector('.canvas');
