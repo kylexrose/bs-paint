@@ -10,19 +10,7 @@ while (count < gridWidth * gridWidth) {
   count++;
 }
 
-/*
-let innerCanvas = "";
-const width = 40;
-const height = 40;
-for (let row = 1; row <= height; row++){
-    grid += "<div class=\"row\" id = \"row" + row + "\" >";
-    for (let column = 1; column <= width; column++){
-        grid += "<p class =\"row" + row + " column" + column + " square\" id=\"cell[" + row + ", " + column + "]\" ></p>";
-    }
-    grid += "</div>"
-}
-document.getElementById("grid").innerHTML = grid;
-*/
+
 
 const numOfColors = 8;
 const colors = [];
